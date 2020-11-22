@@ -1,4 +1,4 @@
-  function pathOfPoints = ImageProcessing(FileName)
+function pathOfPoints = ImageProcessing(FileName)
     I = imread(FileName);
     BW = imbinarize(I); 
     [B, I]= bwboundaries(BW);
@@ -9,6 +9,7 @@
     MaxVal = max([B{:,:}]);
     max_X = MaxVal(2);
     max_Y = MaxVal(1);
-    
+    grid on
+    title("Binarized Ghost Boundary")
     pathOfPoints = [B, max_X, max_Y];
 end
