@@ -47,7 +47,7 @@ thetaArray = [0, 0];
 
 fkTransformation = FK_World(M, sArray, thetaArray);
 
-cellPoints = ImageProcessing('batman5.png');
+cellPoints = ImageProcessing('ghost2.png');
 pixlePoints = cell2mat(cellPoints(1));
 max_X = cell2mat(cellPoints(2));
 max_Y = cell2mat(cellPoints(3));

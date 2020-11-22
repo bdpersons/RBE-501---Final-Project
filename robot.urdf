@@ -1,0 +1,70 @@
+<robot name="gaia">
+   <link name="base">
+      <visual name="base">
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <geometry>
+            <mesh filename="./CAD/Link0.stl" scale="1000 1000 1000"/>
+         </geometry>
+         <material name="plastic">
+            <color rgba="0.71372549 0.607843137 0.298039216 1.0"/>
+         </material>
+      </visual>
+   </link>
+   <link name="link1">
+      <visual name="link1">
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <geometry>
+            <mesh filename="./CAD/Link1.stl" scale="1000 1000 1000"/>
+         </geometry>
+         <material name="plastic">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+         </material>
+      </visual>
+   </link>
+   <link name="link2">
+      <visual name="link2">
+         <origin xyz="0.0 0.0 0.0" rpy="-1.57 0.0 0.0"/>
+         <geometry>
+            <mesh filename="./CAD/Link2.stl" scale="1000 1000 1000"/>
+         </geometry>
+         <material name="plastic">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+         </material>
+      </visual>
+   </link>
+   <link name="link3">
+      <visual name="link3">
+         <origin xyz="0.0 0.0 0.0" rpy="-1.57 0.0 0.0"/>
+         <geometry>
+            <mesh filename="./CAD/Link3.stl" scale="1000 1000 1000"/>
+         </geometry>
+         <material name="plastic">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+         </material>
+      </visual>
+   </link>
+
+   <joint name="shoulder" type="revolute">
+      <parent link="base"/>
+      <child link="link1"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <origin xyz="0.0 0.0 65.0" rpy="0.0 0.0 0.0"/>
+      <limit lower="-1.57" upper="1.57" effort="0.0" velocity="0.0"/>
+   </joint>
+   <joint name="elbow" type="revolute">
+      <parent link="link1"/>
+      <child link="link2"/>
+      <origin xyz="0.0 0.0 135.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="0.0 -1.0 0.0"/>
+      <limit lower="-2" upper="2" effort="0.0" velocity="0.0"/>
+
+   </joint>
+   <joint name="wrist" type="revolute">
+      <parent link="link2"/>
+      <child link="link3"/>
+      <origin xyz="175.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="0.0 1.0 0.0"/>
+      <limit lower="-2" upper="2" effort="0.0" velocity="0.0"/>
+
+   </joint>
+</robot>

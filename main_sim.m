@@ -17,7 +17,7 @@ thetaArray = [0, 0];
 
 fkTransformation = FK_World(M, sArray, thetaArray);
 
-cellPoints = ImageProcessing('batman5.png');
+cellPoints = ImageProcessing('ghost2.png');
 pixlePoints = cell2mat(cellPoints(1));
 max_X = cell2mat(cellPoints(2));
 max_Y = cell2mat(cellPoints(3));
@@ -36,6 +36,7 @@ for l = 1:sizePoints(2)
 end
 
 for k = 1:sizePoints(2)
+    if mod(k, 20) == 0
         zero = homeConfiguration(robot);
         zero(1).JointPosition = jointAngles(1, k);
         zero(2).JointPosition = jointAngles(2, k);
@@ -44,13 +45,7 @@ for k = 1:sizePoints(2)
         hold on
         axis([-230 370 -200 200 -10 600]);
         hold off
-        
-        packet(1) = jointAngles(1, k)
-        packet(4) = jointAngles(2, k)
-        packet(7) = jointAngles(3, k)
-        
-        % set motor to those positions
-        pp.write(PID_SERV_ID, packet);
-        
-       pause(0.001);
+    end
+    pause(0.001);
 end
+display("All finished")
