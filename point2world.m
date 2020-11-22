@@ -1,3 +1,4 @@
+  
 function worldPoints = point2world(pathOfPoints, max_X, max_Y)
     T = [0, 0, -1, 0;
          0, 1, 0, 0;
@@ -20,4 +21,9 @@ function worldPoints = point2world(pathOfPoints, max_X, max_Y)
     
      figure;
      plot3(worldPoints(1,:),worldPoints(2,:),worldPoints(3,:));
+     grid on
+     title("Planned Trajectory for Ghost")
+     xlabel("x axis")
+     ylabel("y axis")
+     zlabel("z axis")
 end
