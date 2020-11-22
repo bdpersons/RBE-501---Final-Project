@@ -1,0 +1,20 @@
+M = [1, 0, 0,   175;
+     0, 1, 0,  0;
+     0, 0, 1, -34.28;
+     0, 0, 0,  1];
+
+%Set Screws for joints
+S1=[0;0;1;0;0;0]
+S2=[0;1;0;-135;0;0];
+S3=[0;1;0;0;0;-175];
+
+sArray = [S1, S2, S3]
+thetaArray = [0, 0]
+
+fkTransformation = FK_World(M, sArray, thetaArray)
+
+cellPoints = ImageProcessing('ghost2.png');
+pizlePoints = cell2mat(cellPoints(1));
+max_X = cell2mat(cellPoints())
+max_Y =
+worldPoints = point2world(pixlePoints(1), pixlePoints(2), pixlePoints(3))
