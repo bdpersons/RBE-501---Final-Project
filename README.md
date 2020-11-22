@@ -1,6 +1,6 @@
 # RBE501 - Final Semester Project
-### Team: Pictobot
-### Contributors: Samantha Grillo, Nathan Stallings, Ryan Carnemolla, and Brandon Persons
+#### Team: Pictobot
+#### Contributors: Samantha Grillo, Nathan Stallings, Ryan Carnemolla, and Brandon Persons
 
 # Simulation Documentation
 
