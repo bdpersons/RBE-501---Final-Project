@@ -36,7 +36,15 @@ for l = 1:sizePoints(2)
 end
 
 for k = 1:sizePoints(2)
-                
+        zero = homeConfiguration(robot);
+        zero(1).JointPosition = jointAngles(1, k);
+        zero(2).JointPosition = jointAngles(2, k);
+        zero(3).JointPosition = jointAngles(3, k);
+        show(robot, zero);
+        hold on
+        axis([-230 370 -200 200 -10 600]);
+        hold off
+        
         packet(1) = jointAngles(1, k)
         packet(4) = jointAngles(2, k)
         packet(7) = jointAngles(3, k)
