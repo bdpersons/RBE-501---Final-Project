@@ -1,0 +1,20 @@
+  
+function worldPoints = point2world(pathOfPoints, max_X, max_Y)
+    R = [0, 0, 1, 0;
+         1, 0, 0, 0;
+         0, 1, 0, 0;
+         0, 0, 0, 1];
+     worldPoints=[];
+     scaleValue = 12/(min([max_X, max_Y]));
+     zVal = 3;
+     pointDimension = size(pathOfPoints);
+     for i = 1:pointDimension(1)
+         point = pathOfPoints(i, :);
+         p = [point(1); point(2); 0; 1];
+         rotatePoint = R * p
+         x = zVal;
+         y =(rotatePoint(1)*scaleValue) - 6;
+         z = rotatePoint(2)*scaleValue;
+         worldPoints = [worldPoints,[x;y;z]];
+     end
+end
